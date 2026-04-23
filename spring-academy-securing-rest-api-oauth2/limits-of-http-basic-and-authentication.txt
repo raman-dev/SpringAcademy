@@ -1,0 +1,61 @@
+Adding Authentication
+------------------------
+Caller -> who made the request
+Principal -> who the request is about
+Request Integrity -> proof that the request wasn't modified by an intermediary
+
+Authentication Process
+----------------------
+ - Parse the request into a credential
+ - Test credential
+ - If credential passes turn into a principal and authorities
+
+    Actual Steps
+    ------------
+    Spring Security decodes the Base64-encoded username and password. 
+    The password is the credential in this case.
+
+    It tests this username and password against a user store. 
+    Specifically, with passwords, it hashes the password and compares it to the user's password hash.
+
+    If the passwords match, it loads the corresponding user and permissions and 
+    stores them in its security context. 
+    The resulting user is the principal that we mentioned earlier.
+
+
+Authentication Result
+-------------------------
+- Result is an Authentication instance
+    Authentication class
+        principal
+        credentials
+        authorities
+
+Subsequent Requests
+----------------------
+- Stateful and stateless authentication schemes
+- Form Login is a stateful login scheme, stores a session id, and expects session id in following requests
+- HTTP Basic is stateless and expects username and password on every request
+
+
+
+Limits of HTTP Basic
+--------------------
+- Limitations of HTTP Basic Authentication
+        Long Term Credentials
+        Authorization Bypass
+        Sensitive Data Exposure
+
+- Long Term Credentials
+    - password and username don't change for months to years
+    - depends on end user to change password
+
+- Authorization Bypass
+    - Need Trust client application with username and password
+    - assume application will not use username and password for malicious purposes
+
+- Sensitive Data Exposure
+    - Need to send username and password on every request
+    - If not using HTTPS, credentials can be easily intercepted by attackers
+
+    
