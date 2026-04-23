@@ -1,0 +1,51 @@
+OAuth 2.0
+-----------
+
+Three actors in OAuth2 
+----------------------
+    Client Application - wants access to your data and provide services
+    Resource Server - holds and secures data
+    Authorization Server - authorizes a client to access your data
+
+    Actors interact as follows:
+    -------------------------
+        - Client request authorization server for permission to access resource server
+        - Authorization server determines whether or not to grant permission
+        - If granted authorization server creates an access token, that expires after some time
+        - Client makes request to resource server with access token
+        - Resource server verifies access token has permissions and responds
+
+
+ JSON Web Tokens (JWT)
+ ---------------
+    -Industry standard format for encoding access tokens
+    - basic jwt is a set of headers and claims
+    - headers contain metadata
+    - claims are facts asserted by the token, yet to be verified by the resource server
+      hence the word claims
+    
+    Example:
+    headers
+    {
+        "typ": "JWT",
+        "alg": "RS256"
+    }
+
+    claims
+    {
+        "aud": "https://cashcard.example.org",
+        "exp": 1689364985,
+        "iat": 1689361385,
+        "iss": "https://issuer.example.org",
+        "scp": ["cashcard:read", "cashcard:write"],
+        "sub": "sarah1"
+    }
+
+    scp - permissions
+    iss - issuer of token
+    sub - reference to principal the token represents
+    exp - expiry of the token
+
+
+
+
