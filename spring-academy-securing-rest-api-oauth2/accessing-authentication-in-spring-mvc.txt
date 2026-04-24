@@ -1,0 +1,32 @@
+Method Injection
+------------------
+- include Authentication method parameter in any spring mvc handler 
+@GetMapping
+public ResponseEntity<Iterable<CashCard>> findAll(Authentication authentication) { ... }
+
+Principal Type Conversion
+--------------------------
+
+- use @CurrentSecurityContext to get principal or specific values from principal
+@GetMapping
+public ResponseEntity<Iterable<CashCard>> findAll(@CurrentSecurityContext(expression = "authentication.principal") Jwt jwt) { ... }
+
+- any attribute from the Authentication instance can be obtained for example a name
+@GetMapping
+public ResponseEntity<Iterable<CashCard>> findAll(@CurrentSecurityContext(expression = "authentication.name") String owner) { ... }
+
+
+Meta-Annotation
+---------------------
+- use meta annotations to simplify using complicate Spring Expression Language(SpEL)
+
+@Target(ElementType.PARAMETER)
+@Retention(RetentionPolicy.RUNTIME)
+@CurrentSecurityContext(expression="authentication.name")
+public @interface CurrentOwner {
+}
+
+- now to get names we have a simpler annotation
+@GetMapping
+public ResponseEntity<Iterable<CashCard>> findAll(@CurrentOwner String owner) { ... }
+
