@@ -1,0 +1,48 @@
+The Filter Chain
+----------------
+- Spring security filter chain is a set of security filters run in sequence on each request
+- Filter focus on its area of security, doesn't worry about filters downstream
+
+    Filter Categories
+    ------------------
+        Defense Filters
+        Authentication Filters
+        Authorization Filters
+        Infrastructural Filters
+
+Defense Filters
+-----------------
+- Csrf filter -> check incoming csrf tokens and issue new ones
+- HeaderFilter -> writes secure headers to the http
+
+Authentication Filters
+-----------------------
+- Authenticate the request, multiple username-password, jwt-authentication, etc...
+
+Authentication
+---------------
+- Authentication is a Spring Security interface represents an authentication token and an authentication result
+- Can contain different values depending on what it is....
+
+    Authentication Token	Authentication Result
+        principal ("who")	    principal ("who")
+        credentials ("proof")	credentials ("proof")
+        authenticated = false	authenticated = true
+                                authorities ("permissions")
+
+AuthenticationManager
+--------------------
+- An interface that tests the authentication token, on success returns an authentication result
+- AuthenticationManager is composed of several AuthenticationProviders each handle a single authentication scheme
+
+SecurityContext
+-------------------
+- Contains the current authentication
+
+Authorization Filters
+------------------------
+- determine if the request is authorized, will reject unauthenticated requests
+
+SecurityFilterChain
+----------------------
+- Represented by a single bean named SecurityFilterChain
