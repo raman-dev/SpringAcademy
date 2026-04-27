@@ -1,0 +1,4 @@
+SecurityContextHolder
+---------------------
+- use to access Authentication instance outside of Spring MVC, example in filter or async events
+

@@ -1,0 +1,8 @@
+Content Negotiation
+--------------------
+    if client is a browser -> Spring security respond with login page
+    else if client is an http basic client -> 
+        spring security will respond with a 401 and www-authenticate: basic response header
+    else if client is a bearer token client -> spring security will respond with a 401 and a www-authenticate: bearer response header
+
+

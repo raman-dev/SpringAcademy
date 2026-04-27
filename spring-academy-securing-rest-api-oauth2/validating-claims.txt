@@ -1,0 +1,10 @@
+Validating a JWT
+-----------------
+- Spring Security authenticates JWT by validating the signature and 
+  checking if current time is in between issued at time(iat) and expires at(exp) claims.
+- Audiences(aud) represent the receiver of the jwt
+
+JwtDecoder
+--------------
+- Spring Security provides JwtDecoder interface to decode and validate a JWT.
+- use for custom validation of JWT claims.
