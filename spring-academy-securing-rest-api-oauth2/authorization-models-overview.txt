@@ -1,0 +1,25 @@
+Request-Level Authorization
+---------------------------
+- if the request follows pattern X then require authority Y to honor that request
+  example:
+    if request URI = /cashcards then require cashcard:read scope to honor the request
+
+Terms
+-----
+    Request: 
+        any part of the http request, practically speaking, anything that can be read  
+        from an HttpServletRequest instance
+
+    Pattern:
+        the matching rule that decides whether the given request material matches
+    
+    Authority:
+        the authorization rule that applies for the request material that matches 
+        the pattern
+
+Method-Level Authorization
+---------------------------
+- use annotation @EnableMethodSecurity to any spring @Configuration class
+- after on any spring mvc controller method annotate using @PreAuthorize("hasAuthority(someAuthority)")
+  to require permission
+- removes need to use http(http-agnostic) if using method level doesn't need to go through httpsecurity
