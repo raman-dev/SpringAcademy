@@ -1,0 +1,19 @@
+scp claim
+-----------
+    - the set of permissions this token has
+    - no real naming standard or convention
+    - common convention resourcename:operation
+
+Requesting Authority
+---------------------
+- client app tells auth server what permissions required to function
+  auth server tells user client is requesting some permissions
+  user can authorize or not
+  if authorized then auth server will create jwt with granted permissions
+
+
+Adding Request Authorization
+----------------------------
+- requestMatchers(String...) configure authorization to apply to a given rule based on the ant-based uri patterns
+- anyRequest() - configures authorization to apply to any request
+- rules are processed top to bottom the first rule to match is the one that applies
