@@ -1,0 +1,11 @@
+Enabling Method Security
+---------------------------
+- not enabled by default, spring doesn't know which flavor of annotation you want
+- use @EnableMethodSecurity on a @Configuration class example:
+    @EnableMethodSecurity
+    @Configuration
+    public class SecurityConfig{...}
+
+- @PreAuthorize("rule") block mthod invocation unless rule passes
+- @PostAuthorize("rule) block this method return unless rule passes
+

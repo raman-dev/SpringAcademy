@@ -1,0 +1,5 @@
+Enabling Spring Data Authorization
+----------------------------------
+- enable by adding dependency in build.gradle file
+- now we can use SPeL in queries example:
+    @Query("SELECT * FROM cash_card cc WHERE cc.owner = :#{authentication.name}")

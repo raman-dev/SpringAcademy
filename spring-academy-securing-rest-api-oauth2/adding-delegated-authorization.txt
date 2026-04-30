@@ -1,0 +1,24 @@
+using-an-authorization-server
+-----------------------------
+- tell spring where your auth server is example:
+    spring:
+        security:
+            oauth2:
+            resourceserver:
+                jwt:
+                issuer-uri: https://example.org/oauth2
+
+- on startup spring security uses this property to create an OIDC discovery request to 
+  the auth server
+  example:
+    takes  
+        https://example.org/oauth2 turns into ->
+        https://example.org/oauth2/.well-known/openid-configuration
+    resutls in  
+        {
+        // …
+        “jwks_url” : “https://example.org/oauth2/jwks”
+        // …
+        }
+- jwks_url is endpoint the resource server will use to retrieve, cache the auth server public keys over
+  lifecycle of the application
