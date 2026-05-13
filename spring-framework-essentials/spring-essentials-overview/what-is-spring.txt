@@ -1,0 +1,10 @@
+What Is The Spring Framework?
+-----------------------------
+- Open source
+- lightweight
+- DI container
+
+Goal of the Spring Framework
+----------------------------
+ - provide comprehensive infrastructural support for
+   developing enterprise Java applicationss

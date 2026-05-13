@@ -1,0 +1,7 @@
+ApplicationConfig
+------------------
+- contains functions annotated with @Bean
+
+ApplicationContext
+------------------
+- will create all beans defined in ApplicationConfig
