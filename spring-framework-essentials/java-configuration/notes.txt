@@ -1,7 +1,13 @@
 ApplicationConfig
 ------------------
 - contains functions annotated with @Bean
-
+- can split into multiple files
 ApplicationContext
 ------------------
 - will create all beans defined in ApplicationConfig
+- is the DI(Dependency Injection) container
+
+Spring Bean
+------------
+ - default scope is singleton
+ - prototype scope creates new object every time it is asked for
