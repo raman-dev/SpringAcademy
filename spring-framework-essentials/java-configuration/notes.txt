@@ -11,3 +11,22 @@ Spring Bean
 ------------
  - default scope is singleton
  - prototype scope creates new object every time it is asked for
+
+
+ Spring Environment Abstraction
+ -------------------------------
+  - fetch properties from the environment
+  - environment obtains values from property sources
+
+Access properties using @Value 
+------------------------------
+- don't need explicit environment bean
+
+Profiles
+----------
+- can group beans into profiles
+
+Spring Expression Language(SpEL)
+--------------------------------
+ - expression language for annotations and other spring services
+ - can access spring beans
