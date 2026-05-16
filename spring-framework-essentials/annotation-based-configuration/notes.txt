@@ -2,3 +2,11 @@ Annotation based configuration
 ------------------------------
 - annotate a pojo with @Component
 - @ComponentScan to scan the package for annotated classes
+
+- Dependency injection can have an ambiguity case  
+  2 beans of same type and using @Autowired, with default resolution by type 
+  won't work
+
+- spring provides  @Qualifier for a name resolution
+
+- @Value can be used for dependency injection from the environment
