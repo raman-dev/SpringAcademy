@@ -1,0 +1,4 @@
+Annotation based configuration
+------------------------------
+- annotate a pojo with @Component
+- @ComponentScan to scan the package for annotated classes
