@@ -1,0 +1,31 @@
+Container Lifecycle
+--------------------
+- bean container has 3 phases Initialization, Usage, Destruction
+  
+  Initialization (Step A)
+  --------------
+    - happens when an application context is created
+    - Load Bean definitions -> post process bean definitions
+    - for each bean 
+        - find/create its dependencies
+        - instantiate beans 
+        - perform setter injection 
+    - bean post processing 
+    - bean redy to use
+    
+    - @Configuration class processed
+
+Bean Post processing (Step B)
+--------------------
+- post process beans 
+
+The Use Phase(Step C)
+---------------------
+- proxy are created by bpp's
+- spring can return proxy and not the actual object
+
+Bean Initialization
+---------------------
+- Find/ create dependencies for beans 
+- beans must be created in correct order
+- can force explicit order using @DependsOn("dependencyName")
