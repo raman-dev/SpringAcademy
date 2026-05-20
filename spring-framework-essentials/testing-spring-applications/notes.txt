@@ -1,0 +1,17 @@
+JUnit5
+--------
+- written from scratch
+- 3 components 
+    JUnit Platform
+        - foundation for launching test frameworks on the JVM
+    JUnit Jupiter
+        - extension model for writing tests and extensions in JUnit5
+    JUnit Vintage
+        - TestEngine for running JUnit 3 & 4 tests on the platform
+
+
+- Replaces JUnit4 annotations 
+    @Before -> @BeforeEach
+    @BeforeClass -> @BeforeAll
+    @After -> @AfterEach
+    etc...
