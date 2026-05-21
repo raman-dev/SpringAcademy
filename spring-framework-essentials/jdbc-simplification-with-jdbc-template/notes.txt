@@ -1,0 +1,21 @@
+Problems With Plain JDBC
+-------------------------
+- redundant, error prone code in traditional jdbc code
+- only query statements matter, because rest of is boilerplate
+
+Spring JDBC Template
+---------------------
+- provides boilerplate/skeleton for code
+- eliminates repetitive code and common causes of bugs
+- provides access to full standard JDBC constructs
+
+Creating a  JdbcTemplate
+------------------------
+- requires a datasource 
+- create once and re-use it
+
+
+Basic Usage
+--------------
+- is thread safe so can be a field of a class
+- use rowmapper interface to create domain objects from rows
