@@ -1,0 +1,20 @@
+Transactions & How Java Supports Them
+--------------------------------------
+- ACID -> 
+        Atomic
+            each unit of work happens or doesn't
+        Consistent
+            db integrity constraints cannot be violated
+        Isolated
+            transactions are isolated 
+        Durable
+            changes are permanent
+
+
+Spring Transaction Management
+-----------------------------
+- PlatformTransactionManager is the base interface
+- just like any other bean
+- add @Transactional to method
+- can also add @Transactional to class for all methods to be transactional
+- can add rollback parameter for a particular exception being thrown
