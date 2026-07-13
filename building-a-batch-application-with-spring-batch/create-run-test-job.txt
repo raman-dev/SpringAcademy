@@ -1,0 +1,23 @@
+What is a Job?
+---------------
+    - consists of a set of steps that run in a specific order
+    - represented by the Job interface 
+
+        public interface Job {
+            String getName();
+            void execute(JobExecution execution);
+        }
+    - runtime exceptions are handled by implementations and added in 
+      JobExecution object. Inspect JobExecution object to determine success or failure
+    
+
+Launching Jobs
+---------------
+    - Launching jobs is done through the JobLauncher concept represented by an interface
+     public interface JobLauncher {
+        JobExecution run(Job job, JobParameters jobParameters) throws 
+            JobExecutionAlreadyRunningException,
+            JobRestartException,
+            JobInstanceAlreadyCompleteException,
+            JobParametersInvalidException;
+     }

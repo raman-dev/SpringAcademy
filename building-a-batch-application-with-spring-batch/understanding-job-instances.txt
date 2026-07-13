@@ -1,0 +1,32 @@
+What are JobInstances?
+---------------------
+    - Job is defined once, can be run many times
+    - Parameterized Job becomes a JobInstance
+    
+    JobInstance 
+    -----------
+        - A unique parameterization of a Job definition
+        - example EndOfDayJob run once per day with different times 
+
+                 EndOfDayJob <---------Job 
+                      |
+                      |
+             -------------------
+             |                 |
+             |                 |
+        Job Instance 1     Job Instance 2
+        for 2023/1/1        for 2023/1/2
+    
+        Job 
+            JobInstance with JobParameters 
+            JobExecution <---- for every attempt at executing a JobInstance 
+
+        - JobInstance is not considered complete unless a JobExecution completes successfully
+        - JobInstance that is complete cannot be restarted again
+    
+        JobParameters
+        -------------
+            - used to distinguish between JobInstances
+            - can be identifying or non-identifying
+            - by default all JobParameters are identifying, spring provides methods to specify non identifying parameters
+

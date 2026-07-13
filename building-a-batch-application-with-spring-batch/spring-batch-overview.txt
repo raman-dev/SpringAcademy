@@ -1,0 +1,66 @@
+Spring Batch
+--------------------
+    - framework designed to enable development of batch applications for 
+      daily operations of enterprise systems
+
+
+
+Batch Domain Language
+---------------------
+   - Spring Batch Domain Model
+  
+     JobLauncher-----Job----Step---[ItemReader,ItemProcessor,ItemWriter]
+         |            |      |
+         |            |      |
+     --------------------------------
+     |       Job Repository         |
+     --------------------------------
+
+    - Job
+        encapsulates a batch process, that runs uninterrupted from start to finish
+    - Step 
+        Unit of work, can be copying a file or creating an archive or 
+        item oriented task such as, exporting records from a db table to a file 
+    
+    - JobLauncher
+        Launches jobs, with JobParameters, currently running job metadata
+        is stored in the JobRepository
+
+
+    Metadata Tables
+    -----------------
+        - Job_Instance
+            job definition information
+        
+        - Job_Execution
+            information relevant to execution of the job, start time, end time, status
+            new row everytime a job is run
+        
+        - Job_Execution_Context
+            contains execution context of a job, is a set of key value pairs of runtime information,
+            represents the state to be retrieved after a failure 
+        
+        - Step_Execution
+            information relevant to execution of a Step, start/end time, item read/write count
+            new row everytime a step is run
+        
+        - Step_Execution_context 
+            contains execution context of a Step, similar to Job_Execution_Context
+        
+        - Job_Execution_Params
+            contains runtime parameters of a job execution
+
+Spring Batch Architecture
+----------------------------
+    - Layered Architecture contains 3 components
+
+    Application 
+        contains batch job and custom code wr
+    
+    Batch Core 
+        contains runtime classes provided by Spring Batch necessary to create and control batch jobs
+        implementations of Job, Step, JobLaunche,etc
+    
+    Batch Infrastructure 
+        contain common item readers/writers provided by Spring Batch and base services
+        such as repeat and retry mechanisms used by developers and the framework itself
