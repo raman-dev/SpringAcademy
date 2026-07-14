@@ -1,0 +1,39 @@
+What is a Step?
+---------------
+    - A domain object that an independent sequential phase of a batch Job
+    - has all information necessary to define a unit of work
+
+    - is represented by the Step interface 
+    
+    public interface Step {
+        String getName();
+        void execute(StepExecution stepExecution) throws JobInterruptedException;
+    }
+
+
+
+Different Types of Steps 
+------------------------
+    - TaskletStep, designed for simple tasks copying a file or 
+      creating an archive or item oriented tasks 
+    - PartitionedStep, designed to process input data set in partitinos 
+    - FlowStep, for logically grouping steps into flows 
+    - JobStep, similar to FlowStep creates and launches a seperate job execution for the steps in 
+      the specified flow  
+
+                            Step 
+      ---------------------------------------------------
+      |                 |               |               | 
+PartitionedStep    TaskletStep       FlowStep        JobStep
+                        | uses
+                     Tasklet 
+                        |
+            ----------------------- implements
+            |                     |
+ChunkOrientedTasklet    SystemCommandTasklet
+
+    TaskletStep
+    -----------
+        - based on the concept of a Tasklet
+        - a unit of work that a Step should do when invoked
+
