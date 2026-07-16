@@ -37,3 +37,5 @@ ChunkOrientedTasklet    SystemCommandTasklet
         - based on the concept of a Tasklet
         - a unit of work that a Step should do when invoked
 
+
+- Steps are restartable, intersteps are restartable and inner steps are restartable
