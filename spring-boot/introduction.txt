@@ -3,4 +3,8 @@ What is Spring Boot?
  - opinionated view of Spring 
  - faster development than normal Spring development 
  - @SpringBootApplication -> wraps @EnableAutoConfiguration and @SpringBootConfiguration
- - 
+ 
+ - 3 files to get a spring application running:
+                                pom.xml 
+                                application.properties 
+                                Application.class
