@@ -1,0 +1,26 @@
+Externalized Properties 
+-----------------------
+    - looks for application.properties
+    - can be in /config, classpath root, working directory
+    - spring boot looks for profile specific properties in files following 
+      application-{profile}.properties form/convention
+      ex: 
+          application-local.properties (local dev properties)
+          application-cloud.properties (cloud properties)
+          application.properties       (always loaded)
+
+    - can use properties in a @Configuration annotated class using @Value 
+    - can use properties in code with @ConfigurationProperties on a dedicated bean 
+      ex:
+        @ConfigurationProperties(prefix="rewards.client")
+        public class X {
+            private String host;        //rewards.client.host=...
+            private int port;           //rewards.client.port=...
+            private String logdir;      //rewards.client.logdir=...
+            ...
+        }
+    
+    - to use configuration properties use one of the following annotations:
+         @EnableConfigurationProperties
+         @ConfigurationPropertiesScan
+         @Component
