@@ -24,3 +24,27 @@ Externalized Properties
          @EnableConfigurationProperties
          @ConfigurationPropertiesScan
          @Component
+
+Using Auto Configuration
+-------------------------
+    - configures many things automatically? (duh)
+    - provide convenient defaults 
+
+Overriding Auto Configuration
+-----------------------------
+    - can override using properties 
+    - set db settings, log levels
+
+    - can define beans yourself, example if developer defines
+      their own bean of some type then spring boot will not auto configure that bean
+
+    - can disable auto configuration classes
+
+    - CommandLineRunner offers run method, args array
+    - ApplicationRunner offers run method, args as ApplicationArguments 
+      more sophisticated handling mechanism
+    
+    - CommandLineRunner is invoked after all beans are configured and before returning from
+      SpringApplication.run()  
+      
+    
