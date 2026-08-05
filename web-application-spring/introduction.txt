@@ -1,0 +1,17 @@
+Spring MVC
+----------
+    - web framework based on mvc pattern
+    - support server side web rendering & rest
+
+    - Types 
+        WebServlet 
+            - traditional approach
+            - based on java ee servlet specification
+                - servlets, filters, listeners
+        
+        Web Reactive
+            - newer, more efficient 
+            - non blocking approach 
+            - netty, undertow, servlet 3.1+
+    
+    
