@@ -13,5 +13,3 @@ Spring MVC
             - newer, more efficient 
             - non blocking approach 
             - netty, undertow, servlet 3.1+
-    
-    
