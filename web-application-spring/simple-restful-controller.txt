@@ -1,0 +1,20 @@
+Request Processing Lifecycle
+----------------------------
+                      ------------                          ------------
+       request  ->   | dispatcher | -> dispatch request -> | controller |
+       response <-   |  servlet   | <-      data        <-  ------------
+                      ------------
+                          |     |
+                     json |     | data
+                      xml |     |
+                          |     v
+                        -----------
+                       |  message  |
+                       | converter |
+                        -----------
+      
+      - developers only need to create controllers
+      
+      - Controller is a POJO(plain old java object) with an @Controller annotation
+      - @GetMapping tells spring what method to use to process a get request 
+      - use @ResponseBody annotation to return results 
