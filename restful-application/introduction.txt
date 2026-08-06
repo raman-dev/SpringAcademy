@@ -1,0 +1,16 @@
+REST 
+---------
+    - stands for representational state transfer 
+    - http protocol
+
+
+Spring-MVC and REST 
+-------------------
+    - map requests based on http methods get,post,put,delete,...
+    - @RequestMethod(path,method=Request.method.SOME_HTTP_METHOD)
+    
+
+
+RESTTemplate
+--------------
+    - for rest client application to access restful service
