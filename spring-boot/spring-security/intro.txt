@@ -1,0 +1,29 @@
+Security Concepts
+-----------------
+    Principal 
+        - user, decice or system that performs an action
+    Authentication
+        - validated Principal's credentials
+    
+    Authorization 
+        - determine if Principal is allowed access to some resource
+    Authority 
+        - Permission or credential enabling access(such as role)
+    Secured Resource 
+        - Resource that is being secured
+
+
+    the Big Picture
+    -----------------
+            ---------------         ---------------
+           | Authentication |     | Authorization   |           |Security Interceptor|    consults
+           |     Manager    |     |     Manager     |                    |  protects        |             
+            ----------------        ----------------                     |     |           Config
+                       \                                                 |     |          Attributes
+                        \                                                |     |              |
+                         \ populates on success                          |     |          ----------  
+                          \                                              |     --------->| Secured  | 
+        thread of          -------------------                           |               | Resource |  
+    ----------------------|  Security Context | ---------------------->  |                ----------
+        execution         |   Authentication  |
+       (new request)       -------------------

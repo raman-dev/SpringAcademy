@@ -1,0 +1,13 @@
+What is Spring Boot Testing Framework?
+--------------------------------------
+    - built on top of spring testing framework
+    - provides set of annotations for testing 
+
+    Integration Testing with @SpringBootTest
+    ----------------------------------------
+        - searches for @SpringBootConfiguration
+          app context for testing
+        - @SpringBootTest for integration testing,
+          @ContextConfiguration for slice testing
+    
+    
