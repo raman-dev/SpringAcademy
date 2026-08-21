@@ -1,0 +1,5 @@
+What is it?
+--------------
+    - use for metrics and remote metrics
+    - endpoints reveal information about environment and application
+    
